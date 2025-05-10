@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35506.116 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalApi.BestPractices.Api", "MinimalApi.BestPractices.Api\MinimalApi.BestPractices.Api.csproj", "{AE636E29-45B8-4C7D-8798-56001CDA679E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalApi.BestPractices.Application", "MinimalApi.BestPractices.Application\MinimalApi.BestPractices.Application.csproj", "{F8E8FEE3-6E08-4BF7-932F-7F24A98D60F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE636E29-45B8-4C7D-8798-56001CDA679E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE636E29-45B8-4C7D-8798-56001CDA679E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE636E29-45B8-4C7D-8798-56001CDA679E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE636E29-45B8-4C7D-8798-56001CDA679E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8E8FEE3-6E08-4BF7-932F-7F24A98D60F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8E8FEE3-6E08-4BF7-932F-7F24A98D60F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8E8FEE3-6E08-4BF7-932F-7F24A98D60F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8E8FEE3-6E08-4BF7-932F-7F24A98D60F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
