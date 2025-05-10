@@ -22,10 +22,12 @@ namespace MinimalApi.BestPractices.Api.Routes___Practice2
               .WithDescription("Get all blog posts");
 
 
+
+
             group.MapGet("/lite", () =>
             {
                 return Results.Ok();
-            }).AddRequestInfo<GetLiteBlogPostRequest>(PATH, "Get all blog posts with lite info");
+            }).WithInfo<BlogPostResponse>(PATH, "Get all blog posts with lite info");
 
 
             return group;

@@ -37,28 +37,38 @@ namespace MinimalApi.BestPractices.Api.Routes___Practice3
 
             group.MapGet("/", (IVideoService service)
              => service.GetAllAsync(new GetAllVideosRequest()).ToHttpResult())
-             .AddRequestInfo<GetAllVideosRequest>(PATH);
+             .WithInfo<GetAllVideosResponse>(PATH);
+
+
 
             group.MapGet("{id}", (Guid id, IVideoService service)
                => service.GetByIdAsync(new GetByIdVideoRequest(id)).ToHttpResult())
-               .AddRequestInfo<GetByIdVideoRequest>(PATH);
+               .WithInfo<GetByIdVideoResponse>(PATH);
+
+
 
             group.MapPost("/", (IVideoService service, CreateVideoRequest request)
              => service.CreateAsync(request).ToHttpResult())
-             .AddRequestInfo<CreateVideoRequest>(PATH);
+             .WithInfo<CreateVideoResponse>(PATH);
+
+
 
             group.MapPut("/", (IVideoService service, UpdateVideoRequest request)
              => service.UpdateAsync(request).ToHttpResult())
-             .AddRequestInfo<UpdateVideoRequest>(PATH);
+             .WithInfo<UpdateVideoResponse>(PATH);
+
+
 
 
             group.MapDelete("{id}", (Guid id, IVideoService service)
               => service.DeleteAsync(new DeleteVideoRequest(id)).ToHttpResult())
-              .AddRequestInfo<GetByIdVideoRequest>(PATH);
+              .WithInfo<DeleteVideoResponse>(PATH);
+
+
 
             group.MapPost("/ImageUpload", (IFormFile file, IVideoService service)
                 => service.UploadFileAsync(new UploadFileRequest(file.FileName, file.OpenReadStream())).ToHttpResult())
-                .AddRequestInfo<UploadFileRequest>(PATH)
+                .WithInfo<UploadFileResponse>(PATH)
                 .DisableAntiforgery();
 
             return group;

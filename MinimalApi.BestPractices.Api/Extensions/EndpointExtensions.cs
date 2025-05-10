@@ -1,16 +1,13 @@
-﻿
-using System.Reflection.Metadata;
-
-namespace MinimalApi.BestPractices.Api.Extensions
+﻿namespace MinimalApi.BestPractices.Api.Extensions
 {
     public static class EndpointExtensions
     {
-        public static RouteHandlerBuilder AddRequestInfo<TRequest>(this RouteHandlerBuilder builder, string group, string? description = null)
+        public static RouteHandlerBuilder WithInfo<TResponse>(this RouteHandlerBuilder builder, string group, string? description = null)
         {
 
-            builder = builder.WithName(typeof(TRequest).Name.Replace("Request", ""))
+            builder = builder.WithName(typeof(TResponse).Name.Replace("Response", ""))
                 .WithTags(group)
-                .Produces(200, typeof(TRequest), "application/json");
+                .Produces(200, typeof(TResponse), "application/json");
 
             if (!string.IsNullOrEmpty(description))
             {
