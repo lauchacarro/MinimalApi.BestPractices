@@ -3,7 +3,7 @@ using MinimalApi.BestPractices.Application.Models.Videos;
 
 namespace MinimalApi.BestPractices.Application.Services
 {
-    internal class VideoService : IVideoService
+    public class VideoService : IVideoService
     {
         private readonly List<Video> _videos = new();
 

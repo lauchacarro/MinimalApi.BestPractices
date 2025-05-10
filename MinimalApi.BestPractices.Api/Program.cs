@@ -1,9 +1,7 @@
-using Microsoft.AspNetCore.Mvc.ApiExplorer;
-
 using MinimalApi.BestPractices.Api.Routes___Practice1;
-using MinimalApi.BestPractices.Api.Routes___Practice1.v1;
 using MinimalApi.BestPractices.Api.Routes___Practice2;
-
+using MinimalApi.BestPractices.Api.Routes___Practice4;
+using MinimalApi.BestPractices.Application.Services;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +22,16 @@ builder.Services.AddOpenApi("practice2", o =>
 {
     o.ShouldInclude = (apiDescription) => apiDescription.RelativePath!.Contains("Post");
 });
+
+builder.Services.AddOpenApi("practice4", o =>
+{
+    o.ShouldInclude = (apiDescription) => apiDescription.RelativePath!.Contains("Sales");
+});
+
+
+builder.Services.AddScoped<ISalesService, SalesService>();
+builder.Services.AddScoped<IVideoService, VideoService>();
+
 
 // Add Swagger/OpenAPI services
 //builder.Services.AddEndpointsApiExplorer();
@@ -52,6 +60,7 @@ app.MapApiEndpoints();
 
 
 app.MapBlogPosts();
+app.MapSales();
 
 app.Run();
 

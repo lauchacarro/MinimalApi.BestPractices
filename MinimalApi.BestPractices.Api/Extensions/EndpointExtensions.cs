@@ -1,4 +1,6 @@
-﻿namespace MinimalApi.BestPractices.Api.Extensions
+﻿using MinimalApi.BestPractices.Api.Filters;
+
+namespace MinimalApi.BestPractices.Api.Extensions
 {
     public static class EndpointExtensions
     {
